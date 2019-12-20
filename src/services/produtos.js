@@ -15,6 +15,6 @@ export default {
     },
 
     apagar: (produto) => {
-        return http.delete('produto', {data: produto})
+        return http.delete('produto', { data: produto })
     }
 }

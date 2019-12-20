@@ -119,15 +119,16 @@ export default {
       this.produto = produto;
     },
     remover(produto) {
-      if(confirm('Deseja excluir o produto?')) {
-
-        Produto.apagar(produto).then(resposta => {
-          console.log(resposta.data); // eslint-disable-line no-console
-          this.listar();
-          this.errors = {}
-        }).catch(e => {
-          this.errors = e.response.data.errors
-        })
+      if (confirm("Deseja excluir o produto?")) {
+        Produto.apagar(produto)
+          .then(resposta => {
+            console.log(resposta.data); // eslint-disable-line no-console
+            this.listar();
+            this.errors = {};
+          })
+          .catch(e => {
+            this.errors = e.response.data.errors;
+          });
       }
     }
   }
